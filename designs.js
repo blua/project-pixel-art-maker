@@ -1,4 +1,6 @@
 sizePicker.addEventListener('submit', makeGrid);
+pixelCanvas.addEventListener('click',changeColor);
+pixelCanvas.addEventListener('dblclick',removeColor);
 
 let canvas = document.querySelector('#pixelCanvas');
 
@@ -19,4 +21,18 @@ function makeGrid(event) {
 
   pixelCanvas.innerHTML = rows;
 
+}
+
+function changeColor(event) {
+  let color = colorPicker.value;
+
+  if (event.target.nodeName === 'TD') {
+    event.target.style.backgroundColor = color;
+  }
+}
+
+function removeColor(event) {
+  if (event.target.nodeName === 'TD') {
+    event.target.style.backgroundColor = '#fff';
+  }
 }
