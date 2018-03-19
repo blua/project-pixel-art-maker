@@ -21,6 +21,17 @@ function makeGrid(event) {
 
   pixelCanvas.innerHTML = rows;
 
+  clearButtonDiv.innerHTML = '<br><button type="button" id="clearButton">Clear canvas</button>';
+
+  clearButton.addEventListener('click', clearCanvas);
+
+  function clearCanvas() {
+    let tds = pixelCanvas.querySelectorAll('td');
+
+    for (let i = 0; i < tds.length; i++) {
+      tds[i].style.backgroundColor = '#fff';
+    }
+  }
 }
 
 function changeColor(event) {
